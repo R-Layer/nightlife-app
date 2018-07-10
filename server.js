@@ -21,11 +21,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use("/users", userRoutes);
-
-app.get("/", (req, res) => {
-  res.send({ message: "kut!" });
-});
+app.use("api/users", userRoutes);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === "production") {
