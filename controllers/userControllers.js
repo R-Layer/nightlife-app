@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../models/userModel");
 
+const configVars = require("../config/keys");
+
 exports.users_get_all = (req, res) => {
   User.find({})
     .exec()
@@ -30,7 +32,9 @@ exports.users_get_one = (req, res) => {
   }
   // Credits to andyMacleod [STACK OVERFLOW]
   let rdParam =
-    idTest === req.params.id ? { _id: idTest } : { email: req.params.id };
+    idTest.toString() === req.params.id
+      ? { _id: idTest }
+      : { email: req.params.id };
 
   User.findOne(rdParam)
     .exec()
@@ -60,7 +64,7 @@ exports.users_create_one = (req, res) => {
     .exec()
     .then(user => {
       if (user) {
-        res.status(409).json({ message: "Email already in use" });
+        res.status(409).json({ message: "Email already in use", err: {} });
       } else {
         bcrypt
           .hash(req.body.password, 10)
@@ -75,7 +79,10 @@ exports.users_create_one = (req, res) => {
               .then(userCreated =>
                 res.status(201).json({
                   message: "User successfully created",
-                  userCreated
+                  newUser: {
+                    username: userCreated.username,
+                    email: userCreated.email
+                  }
                 })
               )
               .catch(err =>
@@ -110,7 +117,9 @@ exports.users_delete_one = (req, res) => {
     idTest = "failed";
   }
   let delParam =
-    idTest === req.params.id ? { _id: idTest } : { email: req.params.id };
+    idTest.toString() === req.params.id
+      ? { _id: idTest }
+      : { email: req.params.id };
 
   User.findOneAndDelete(delParam)
     .exec()
@@ -144,7 +153,9 @@ exports.users_update_one = (req, res) => {
   }
   // Credits to andyMacleod [STACK OVERFLOW]
   let updParam =
-    idTest === req.params.id ? { _id: idTest } : { email: req.params.id };
+    idTest.toString() === req.params.id
+      ? { _id: idTest }
+      : { email: req.params.id };
 
   User.findOneAndUpdate(updParam, { $set: req.body })
     .exec()
@@ -152,7 +163,10 @@ exports.users_update_one = (req, res) => {
       if (userUpdated) {
         res.status(200).json({
           message: "User updated successfully",
-          userUpdated
+          userUpToDate: {
+            username: userUpdated.username,
+            email: userUpdated.email
+          }
         });
       } else {
         res.status(404).json({
@@ -180,7 +194,7 @@ exports.users_authentication = (req, res) => {
             if (result) {
               const token = jwt.sign(
                 { username: user.username, id: user._id },
-                process.env.JWT_SECRET,
+                configVars.JWT_SECRET,
                 { expiresIn: "1h" }
               );
               res.status(200).json({

@@ -21,7 +21,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use("api/users", userRoutes);
+app.use("/api/users", userRoutes);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === "production") {
