@@ -7,7 +7,7 @@ const User = require("../models/userModel");
 const configVars = require("../config/keys");
 
 exports.users_get_all = (req, res) => {
-  User.find({})
+  User.find({}, "username _id email")
     .exec()
     .then(users =>
       res.status(200).json({
@@ -36,7 +36,7 @@ exports.users_get_one = (req, res) => {
       ? { _id: idTest }
       : { email: req.params.id };
 
-  User.findOne(rdParam)
+  User.findOne(rdParam, "username _id email")
     .exec()
     .then(user => {
       if (user) {
@@ -85,21 +85,25 @@ exports.users_create_one = (req, res) => {
                   }
                 })
               )
-              .catch(err =>
+              .catch((
+                err // Error during the saving
+              ) =>
                 res.status(500).json({
                   message: "Error: user registration failed",
                   err
                 })
               );
           })
-          .catch(err =>
+          .catch((
+            err // Error during hashing of password
+          ) =>
             res.status(500).json({
               message: "Error: user registration failed",
               err
             })
           );
       }
-    })
+    }) // Error during research of email
     .catch(err =>
       res.status(500).json({
         message: "Error: user registration failed",
@@ -108,7 +112,36 @@ exports.users_create_one = (req, res) => {
     );
 };
 
-exports.users_delete_one = (req, res) => {
+exports.users_delete_self = (req, res) => {
+  User.findByIdAndDelete(req.app.locals.userAuth.id)
+    .select("username email")
+    .exec()
+    .then(removedItem => {
+      if (removedItem) {
+        res.status(200).json({
+          message: `User <${removedItem.username}> removed`,
+          removedItem
+        });
+      } else {
+        res.status(404).json({
+          message: "User not found",
+          err: removedItem
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Error: user removal failed",
+        err
+      });
+    });
+};
+
+/*************************************************************************************/
+/**** DELETE BY ID - MORE DANGEROUS THAN REMOVE SELF (id from token) *****************/
+/*************************************************************************************/
+/*
+ exports.users_delete_one = (req, res) => {
   // Credits to andyMacleod [STACK OVERFLOW]
   let idTest = "";
   try {
@@ -142,9 +175,42 @@ exports.users_delete_one = (req, res) => {
         err
       });
     });
+}; */
+
+exports.users_update_self = (req, res) => {
+  User.findByIdAndUpdate(
+    req.app.locals.userAuth.id,
+    { $set: req.body },
+    { new: true, runValidators: true }
+  )
+    .select("username email")
+    .exec()
+    .then(userUpdated => {
+      if (userUpdated) {
+        res.status(200).json({
+          message: "User updated successfully",
+          userUpdated
+        });
+      } else {
+        res.status(404).json({
+          message: "User not found",
+          err: userUpdated
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Error: update failed",
+        err
+      });
+    });
 };
 
-exports.users_update_one = (req, res) => {
+/*************************************************************************************/
+/**** UPDATE BY ID - MORE DANGEROUS THAN REMOVE SELF (id from token) *****************/
+/*************************************************************************************/
+
+/* exports.users_update_one = (req, res) => {
   let idTest = "";
   try {
     idTest = new ObjectID(req.params.id);
@@ -157,6 +223,7 @@ exports.users_update_one = (req, res) => {
       ? { _id: idTest }
       : { email: req.params.id };
 
+  console.log("User from request", req.app.locals.userAuth);
   User.findOneAndUpdate(updParam, { $set: req.body })
     .exec()
     .then(userUpdated => {
@@ -181,7 +248,7 @@ exports.users_update_one = (req, res) => {
         err
       });
     });
-};
+}; */
 
 exports.users_authentication = (req, res) => {
   User.findOne({ email: req.body.email })

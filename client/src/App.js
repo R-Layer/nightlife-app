@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./css/App.css";
+import "./css/customBulma.css";
 
 class App extends Component {
   render() {
@@ -8,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+        <p className="App-intro has-background-primary">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
