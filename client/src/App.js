@@ -13,17 +13,21 @@ import { rootReducer } from "./reducers/rootReducer";
 
 import PrivateRoute from "./components/PrivateRoute";
 import LandingPage from "./components/LandingPage";
+import Login from "./components/forms/Login";
+import Register from "./components/forms/Register";
 import LandingPrivate from "./components/LandingPrivate";
 
 class App extends Component {
   render() {
     const store = createStore(rootReducer, applyMiddleware(thunk));
-    const author = { isAuthenticated: true };
+    const author = { isAuthenticated: false };
     return (
       <Router>
         <Provider store={store}>
           <div>
             <Route exact path={"/"} component={LandingPage} />
+            <Route exact path={"/login"} component={Login} />
+            <Route exact path={"/register"} component={Register} />
             <Switch>
               <PrivateRoute
                 exact

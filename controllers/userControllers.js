@@ -207,7 +207,7 @@ exports.users_update_self = (req, res) => {
 };
 
 /*************************************************************************************/
-/**** UPDATE BY ID - MORE DANGEROUS THAN REMOVE SELF (id from token) *****************/
+/**** UPDATE BY ID - MORE DANGEROUS THAN UPDATE SELF (id from token) *****************/
 /*************************************************************************************/
 
 /* exports.users_update_one = (req, res) => {
