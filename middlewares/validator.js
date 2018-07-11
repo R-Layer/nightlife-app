@@ -11,14 +11,14 @@ const loginValidator = joi.object().keys({
 });
 
 const signupValidator = joi.object().keys({
-  username: joi.string().min(3),
+  name: joi.string().min(3),
   email: joi
     .string()
     .email()
     .required(),
   password: joi.string().required(),
   // CREDITS TO GERGO ERDOSI [STACK OVERFLOW]
-  passwordConfirmation: joi
+  password2: joi
     .any()
     .valid(joi.ref("password"))
     .required()

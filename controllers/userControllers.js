@@ -70,7 +70,7 @@ exports.users_create_one = (req, res) => {
           .hash(req.body.password, 10)
           .then(hashed => {
             const newUser = new User({
-              username: req.body.username,
+              name: req.body.name,
               email: req.body.email,
               passwordHash: hashed
             });
