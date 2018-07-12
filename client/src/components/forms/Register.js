@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import PropTypes from "prop-types";
 
-import { registerAction } from "../../actions/userActions";
+import { registerAction } from "../../redux/actions/userActions";
 
 class Register extends Component {
   constructor(props) {

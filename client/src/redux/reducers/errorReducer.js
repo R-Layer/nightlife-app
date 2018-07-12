@@ -1,11 +1,8 @@
-export const failProcess = {
-  ACTUAL_ERRORS: "ACTUAL_ERRORS",
-  CLEAR: "CLEAR"
-};
+import { failProcess } from "../types";
 
 export const errors = (state = {}, action) => {
   switch (action.type) {
-    case failProcess.ACTUAL_ERRORS:
+    case failProcess.ERRORS:
       return action.err;
     case failProcess.CLEAR:
       return {};

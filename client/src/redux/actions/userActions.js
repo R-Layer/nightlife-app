@@ -1,22 +1,9 @@
-import { failProcess } from "../reducers/errorReducer";
-
-export const registerProcess = {
-  REQUEST: "REGISTER_REQUEST",
-  SUCCESS: "REGISTER_SUCCESS",
-  FAILURE: "REGISTER_FAILURE"
-};
-
-export const deleteProcess = {
-  REQUEST: "DELETE_REQUEST",
-  SUCCESS: "DELETE_SUCCESS",
-  FAILURE: "DELETE_FAILURE"
-};
-
-export const loginProcess = {
-  REQUEST: "LOGIN_REQUEST",
-  SUCCESS: "LOGIN_SUCCESS",
-  FAILURE: "LOGIN_FAILURE"
-};
+import {
+  registerProcess,
+  loginProcess,
+  deleteProcess,
+  failProcess
+} from "../types";
 
 export const registerAction = userData => dispatch => {
   const requestOptions = {
@@ -29,12 +16,12 @@ export const registerAction = userData => dispatch => {
     .then(res => res.json())
     .then(newUser => {
       if (newUser.err) {
-        return dispatch({ type: failProcess.ACTUAL_ERRORS, err: newUser.err });
+        return dispatch({ type: failProcess.ERRORS, err: newUser.err });
       } else {
         return dispatch({ type: registerProcess.SUCCESS, newUser });
       }
     })
-    .catch(err => dispatch({ type: failProcess.ACTUAL_ERRORS, err }));
+    .catch(err => dispatch({ type: failProcess.ERRORS, err }));
 };
 
 export const loginAction = userData => dispatch => {
@@ -49,12 +36,12 @@ export const loginAction = userData => dispatch => {
     .then(loggedUser => {
       if (loggedUser.err) {
         return dispatch({
-          type: failProcess.ACTUAL_ERRORS,
+          type: failProcess.ERRORS,
           err: loggedUser.err
         });
       } else {
         return dispatch({ type: loginProcess.SUCCESS, loggedUser });
       }
     })
-    .catch(err => dispatch({ type: failProcess.ACTUAL_ERRORS, err }));
+    .catch(err => dispatch({ type: failProcess.ERRORS, err }));
 };
