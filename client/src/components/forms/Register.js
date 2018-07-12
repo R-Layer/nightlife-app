@@ -42,110 +42,129 @@ class Register extends Component {
     }
 
     return (
-      <div className="columns CST_fullHeight is-vcentered is-centered">
-        <div className="column  is-8-desktop is-10-tablet">
-          <form className="CST_frame" onSubmit={this.onSubmit} noValidate>
-            <h1 className="title is-1 has-text-centered CST_titleThrough">
-              Register
-            </h1>
-            <div className="field">
-              <label className="label">Username</label>
-              <div className="control has-icons-left">
-                <input
-                  className={spreadErr.name ? "input is-danger" : "input"}
-                  type="text"
-                  placeholder="Text input"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-user" />
-                </span>
+      <div className="CST_fullHeight ">
+        {errors.message && (
+          <div className="notification is-danger has-text-centered CST_frame">
+            {errors.message}
+          </div>
+        )}
+        <div
+          className={`columns is-vcentered is-centered ${
+            errors.message ? "" : "CST_fullHeight"
+          }`}
+        >
+          <div className="column  is-8-desktop is-10-tablet">
+            <form className="CST_frame" onSubmit={this.onSubmit} noValidate>
+              <h1 className="title is-1 has-text-centered CST_titleThrough">
+                Register
+              </h1>
+              <div className="field">
+                <label className="label">Username</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={spreadErr.name ? "input is-danger" : "input"}
+                    type="text"
+                    placeholder="iAmACoolDog"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-user" />
+                  </span>
+                </div>
+                {spreadErr.name &&
+                  spreadErr.name.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.name &&
-                spreadErr.name.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
 
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control has-icons-left">
-                <input
-                  className={spreadErr.email ? "input is-danger" : "input"}
-                  type="email"
-                  placeholder="Email input"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope" />
-                </span>
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={spreadErr.email ? "input is-danger" : "input"}
+                    type="email"
+                    placeholder="Email input"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-envelope" />
+                  </span>
+                </div>
+                {spreadErr.email &&
+                  spreadErr.email.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.email &&
-                spreadErr.email.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className={spreadErr.password ? "input is-danger" : "input"}
-                  type="password"
-                  placeholder="Text input"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                />
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={spreadErr.password ? "input is-danger" : "input"}
+                    type="password"
+                    placeholder="P4$$w0Rd@@15"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-lock" />
+                  </span>
+                </div>
+                {spreadErr.password &&
+                  spreadErr.password.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.password &&
-                spreadErr.password.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
-            <div className="field">
-              <label className="label">Confirm password</label>
-              <div className="control">
-                <input
-                  className={spreadErr.password2 ? "input is-danger" : "input"}
-                  type="password"
-                  placeholder="Text input"
-                  name="password2"
-                  value={this.state.password2}
-                  onChange={this.onChange}
-                />
+              <div className="field">
+                <label className="label">Confirm password</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={
+                      spreadErr.password2 ? "input is-danger" : "input"
+                    }
+                    type="password"
+                    placeholder="P4$$w0Rd@@15"
+                    name="password2"
+                    value={this.state.password2}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-lock" />
+                  </span>
+                </div>
+                {spreadErr.password2 &&
+                  spreadErr.password2.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.password2 &&
-                spreadErr.password2.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
 
-            <div className="buttons CST_is-opposed">
-              <button type="submit" className="button is-success">
-                Sign up
-              </button>
-              <button type="button" className="button is-info">
-                Return home
-              </button>
-            </div>
+              <div className="buttons CST_is-opposed">
+                <button type="submit" className="button is-success">
+                  Sign up
+                </button>
+                <button type="button" className="button is-info">
+                  Return home
+                </button>
+              </div>
 
-            <p className="has-text-centered">
-              Already have an account? <br />
-              <a href="/login"> Login</a>
-            </p>
-          </form>
+              <p className="has-text-centered">
+                Already have an account? <br />
+                <a href="/login"> Login</a>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );

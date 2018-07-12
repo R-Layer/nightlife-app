@@ -3,7 +3,7 @@ const configVars = require("../config/keys");
 
 module.exports = (req, res, next) => {
   try {
-    const { token } = JSON.parse(req.headers.authorization);
+    const token = req.headers.authorization;
     req.app.locals.userAuth = jwt.verify(token, configVars.JWT_SECRET);
     next();
   } catch (err) {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { loginAction } from "../../redux/actions/userActions";
+import { loginAction, logoutAction } from "../../redux/actions/userActions";
 
 class Login extends Component {
   constructor(props) {
@@ -24,6 +24,10 @@ class Login extends Component {
     this.props.loginUser(this.state);
   };
 
+  onClick = () => {
+    this.props.logout();
+  };
+
   render() {
     const { errors } = this.props;
     let spreadErr = {};
@@ -36,70 +40,85 @@ class Login extends Component {
     }
 
     return (
-      <div className="columns CST_fullHeight is-vcentered is-centered">
-        <div className="column is-8-desktop is-10-tablet">
-          <form className="CST_frame" onSubmit={this.onSubmit} noValidate>
-            <h1 className="title is-1 has-text-centered CST_titleThrough">
-              Login
-            </h1>
+      <div className="CST_fullHeight ">
+        {errors.message && (
+          <div className="notification is-danger has-text-centered CST_frame">
+            {errors.message}
+          </div>
+        )}
+        <div
+          className={`columns is-vcentered is-centered ${
+            errors.message ? "" : "CST_fullHeight"
+          }`}
+        >
+          <div className="column is-8-desktop is-10-tablet">
+            <form className="CST_frame" onSubmit={this.onSubmit} noValidate>
+              <h1 className="title is-1 has-text-centered CST_titleThrough">
+                Login
+              </h1>
 
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control has-icons-left">
-                <input
-                  className={spreadErr.email ? "input is-danger" : "input"}
-                  type="email"
-                  placeholder="Email input"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope" />
-                </span>
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={spreadErr.email ? "input is-danger" : "input"}
+                    type="email"
+                    placeholder="Email input"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-envelope" />
+                  </span>
+                </div>
+                {spreadErr.email &&
+                  spreadErr.email.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.email &&
-                spreadErr.email.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
 
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className={spreadErr.password ? "input is-danger" : "input"}
-                  type="password"
-                  placeholder="Text input"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                />
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control">
+                  <input
+                    className={spreadErr.password ? "input is-danger" : "input"}
+                    type="password"
+                    placeholder="Text input"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                  />
+                </div>
+                {spreadErr.password &&
+                  spreadErr.password.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
               </div>
-              {spreadErr.password &&
-                spreadErr.password.map(err => (
-                  <p className="help is-danger" key={err}>
-                    {err}
-                  </p>
-                ))}
-            </div>
 
-            <div className="buttons CST_is-opposed">
-              <button type="submit" className="button is-success">
-                Sign up
-              </button>
-              <button type="button" className="button is-info">
-                Return home
-              </button>
-            </div>
+              <div className="buttons CST_is-opposed">
+                <button type="submit" className="button is-success">
+                  Sign up
+                </button>
+                <button
+                  onClick={this.onClick}
+                  type="button"
+                  className="button is-info"
+                >
+                  Return home
+                </button>
+              </div>
 
-            <p className="has-text-centered">
-              Doesn't have an account? <br />
-              <a href="/register"> Register now!</a>
-            </p>
-          </form>
+              <p className="has-text-centered">
+                Doesn't have an account? <br />
+                <a href="/register"> Register now!</a>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );
@@ -111,11 +130,13 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors
+  errors: state.errors,
+  user: state.userReducer
 });
 
 const mapDispatchToProps = dispatch => ({
-  loginUser: userData => dispatch(loginAction(userData))
+  loginUser: userData => dispatch(loginAction(userData)),
+  logout: () => dispatch(logoutAction())
 });
 
 export default connect(

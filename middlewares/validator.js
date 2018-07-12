@@ -49,8 +49,7 @@ const validator = (req, res, next) => {
   joi.validate(req.body, dataToValidate, (err, value) => {
     if (err) {
       res.status(422).json({
-        message: "Incorrect field(s)",
-        err
+        err: Object.assign({}, err, { message: "Incorrect field(s)" })
       });
     } else {
       req.app.locals.userData = value;

@@ -119,13 +119,12 @@ exports.users_delete_self = (req, res) => {
     .then(removedItem => {
       if (removedItem) {
         res.status(200).json({
-          message: `User <${removedItem.username}> removed`,
+          message: `User <${removedItem.name}> removed`,
           removedItem
         });
       } else {
         res.status(404).json({
-          message: "User not found",
-          err: removedItem
+          err: { message: "User not found" }
         });
       }
     })
@@ -193,8 +192,7 @@ exports.users_update_self = (req, res) => {
         });
       } else {
         res.status(404).json({
-          message: "User not found",
-          err: userUpdated
+          err: { message: "User not found" }
         });
       }
     })
@@ -270,9 +268,7 @@ exports.users_authentication = (req, res) => {
               });
             } else {
               res.status(401).json({
-                message: "Auth failed", // Password doesn't match
-                user: null // Sent back user ( manually set to null) instead of result  to reduce the ability to check
-                // client-side which one among password or email has been failed
+                err: { message: "Auth failed" } // Password doesn't match
               });
             }
           })
@@ -284,8 +280,7 @@ exports.users_authentication = (req, res) => {
           );
       } else {
         res.status(401).json({
-          message: "Auth failed", // Email not found
-          user // User null, sent back for consistency
+          err: { message: "Auth failed" } // Email not found
         });
       }
     })

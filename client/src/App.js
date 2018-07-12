@@ -16,10 +16,16 @@ import LandingPage from "./components/LandingPage";
 import Login from "./components/forms/Login";
 import Register from "./components/forms/Register";
 import LandingPrivate from "./components/LandingPrivate";
+import { loginProcess } from "./redux/types";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 const author = { isAuthenticated: false };
-
+if (localStorage.authToken) {
+  store.dispatch({
+    type: loginProcess.SUCCESS,
+    loggedUser: { token: localStorage.authToken }
+  });
+}
 class App extends Component {
   render() {
     return (

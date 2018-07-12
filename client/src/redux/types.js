@@ -10,7 +10,8 @@ export const deleteProcess = {
 
 export const loginProcess = {
   REQUEST: "LOGIN_REQUEST",
-  SUCCESS: "LOGIN_SUCCESS"
+  SUCCESS: "LOGIN_SUCCESS",
+  LOGOUT: "LOGOUT"
 };
 
 export const failProcess = {

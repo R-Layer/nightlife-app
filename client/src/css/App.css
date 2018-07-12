@@ -8,6 +8,10 @@
   padding: 2rem;
 }
 
+.is-danger.CST_frame {
+  border: none;
+}
+
 .CST_titleThrough {
   margin-top: -4rem;
   background-color: #fff;
