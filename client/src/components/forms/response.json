@@ -1,0 +1,875 @@
+{
+  "businesses": [
+    {
+      "id": "TkFEKhsCixPWlShULKvMdQ",
+      "alias": "bottega-louie-los-angeles",
+      "name": "Bottega Louie",
+      "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/rAImnKvUNcNY8i6qEDWrZA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/bottega-louie-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 14845,
+      "categories": [
+        {
+          "alias": "italian",
+          "title": "Italian"
+        },
+        {
+          "alias": "bakeries",
+          "title": "Bakeries"
+        },
+        {
+          "alias": "breakfast_brunch",
+          "title": "Breakfast & Brunch"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.0469300995766,
+        "longitude": -118.256601457672
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "700 S Grand Ave",
+        "address2": null,
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90017",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["700 S Grand Ave", "Los Angeles, CA 90017"]
+      },
+      "phone": "+12138021470",
+      "display_phone": "(213) 802-1470",
+      "distance": 6186.4405384986385
+    },
+    {
+      "id": "7O1ORGY36A-2aIENyaJWPg",
+      "alias": "howlin-rays-los-angeles-3",
+      "name": "Howlin' Ray's",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/6HVQrC1EzLBN7XZ432vlgA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/howlin-rays-los-angeles-3?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3416,
+      "categories": [
+        {
+          "alias": "southern",
+          "title": "Southern"
+        },
+        {
+          "alias": "chickenshop",
+          "title": "Chicken Shop"
+        },
+        {
+          "alias": "tradamerican",
+          "title": "American (Traditional)"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0614861063899,
+        "longitude": -118.239554800093
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "727 N Broadway",
+        "address2": "Ste 128",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90012",
+        "country": "US",
+        "state": "CA",
+        "display_address": [
+          "727 N Broadway",
+          "Ste 128",
+          "Los Angeles, CA 90012"
+        ]
+      },
+      "phone": "+12139358399",
+      "display_phone": "(213) 935-8399",
+      "distance": 7537.625406583131
+    },
+    {
+      "id": "KQBGm5G8IDkE8LeNY45mbA",
+      "alias": "wurstküche-los-angeles-2",
+      "name": "Wurstküche",
+      "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/gWIbvLDR1Y6yfTGTzXp_lw/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/wurstk%C3%BCche-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 7757,
+      "categories": [
+        {
+          "alias": "hotdog",
+          "title": "Hot Dogs"
+        },
+        {
+          "alias": "german",
+          "title": "German"
+        },
+        {
+          "alias": "gastropubs",
+          "title": "Gastropubs"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.0456047058105,
+        "longitude": -118.236061096191
+      },
+      "transactions": ["delivery", "pickup"],
+      "price": "$$",
+      "location": {
+        "address1": "800 E 3rd St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90013",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["800 E 3rd St", "Los Angeles, CA 90013"]
+      },
+      "phone": "+12136874444",
+      "display_phone": "(213) 687-4444",
+      "distance": 8058.966046339442
+    },
+    {
+      "id": "iSZpZgVnASwEmlq0DORY2A",
+      "alias": "daikokuya-little-tokyo-los-angeles",
+      "name": "Daikokuya Little Tokyo",
+      "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/dctx5POftA4Pk70II3PS1A/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/daikokuya-little-tokyo-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 7573,
+      "categories": [
+        {
+          "alias": "ramen",
+          "title": "Ramen"
+        },
+        {
+          "alias": "noodles",
+          "title": "Noodles"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.05008090944,
+        "longitude": -118.2401804513
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "327 E 1st St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90012",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["327 E 1st St", "Los Angeles, CA 90012"]
+      },
+      "phone": "+12136261680",
+      "display_phone": "(213) 626-1680",
+      "distance": 7589.1572422583295
+    },
+    {
+      "id": "fEY0zHaDMfIW3-N__joDKQ",
+      "alias": "bestia-los-angeles",
+      "name": "Bestia",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/2qZHshAOHh86vSP6sfruMQ/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/bestia-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 4917,
+      "categories": [
+        {
+          "alias": "italian",
+          "title": "Italian"
+        },
+        {
+          "alias": "cocktailbars",
+          "title": "Cocktail Bars"
+        },
+        {
+          "alias": "pizza",
+          "title": "Pizza"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0337004201362,
+        "longitude": -118.229262541684
+      },
+      "transactions": [],
+      "price": "$$$",
+      "location": {
+        "address1": "2121 E 7th Pl",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90021",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["2121 E 7th Pl", "Los Angeles, CA 90021"]
+      },
+      "phone": "+12135145724",
+      "display_phone": "(213) 514-5724",
+      "distance": 9035.92705778562
+    },
+    {
+      "id": "DJek3FUewBzMc0gS-Gms9w",
+      "alias": "the-morrison-los-angeles",
+      "name": "The Morrison",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/fNFdhU_I6Iw7J1jM5nVmAw/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/the-morrison-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3621,
+      "categories": [
+        {
+          "alias": "gastropubs",
+          "title": "Gastropubs"
+        },
+        {
+          "alias": "burgers",
+          "title": "Burgers"
+        },
+        {
+          "alias": "bars",
+          "title": "Bars"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.12384,
+        "longitude": -118.26868
+      },
+      "transactions": ["pickup"],
+      "price": "$$",
+      "location": {
+        "address1": "3179 Los Feliz Blvd",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90039",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["3179 Los Feliz Blvd", "Los Angeles, CA 90039"]
+      },
+      "phone": "+13236671839",
+      "display_phone": "(323) 667-1839",
+      "distance": 8445.157607209154
+    },
+    {
+      "id": "qAAoilHU25Qr45FOQlA19g",
+      "alias": "kang-ho-dong-baekjeong-los-angeles-4",
+      "name": "Kang Ho-dong Baekjeong",
+      "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/izhJQsGE5LZAHQb-WmNwSA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/kang-ho-dong-baekjeong-los-angeles-4?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3707,
+      "categories": [
+        {
+          "alias": "bbq",
+          "title": "Barbeque"
+        },
+        {
+          "alias": "korean",
+          "title": "Korean"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0637349,
+        "longitude": -118.2973124
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "3465 W 6th St",
+        "address2": "",
+        "address3": null,
+        "city": "Los Angeles",
+        "zip_code": "90020",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["3465 W 6th St", "Los Angeles, CA 90020"]
+      },
+      "phone": "+12133849678",
+      "display_phone": "(213) 384-9678",
+      "distance": 2232.6008748533277
+    },
+    {
+      "id": "qCJ2LFfNbXYBIcjXNva1cA",
+      "alias": "langers-los-angeles-2",
+      "name": "Langer's",
+      "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/QOe-c9653RqTlSlSrNgmmw/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/langers-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3259,
+      "categories": [
+        {
+          "alias": "delis",
+          "title": "Delis"
+        },
+        {
+          "alias": "sandwiches",
+          "title": "Sandwiches"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.05609,
+        "longitude": -118.27658
+      },
+      "transactions": ["delivery"],
+      "price": "$$",
+      "location": {
+        "address1": "704 S Alvarado St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90057",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["704 S Alvarado St", "Los Angeles, CA 90057"]
+      },
+      "phone": "+12134838050",
+      "display_phone": "(213) 483-8050",
+      "distance": 4148.148957509995
+    },
+    {
+      "id": "ki5SNb4Lli6uOklz6BXXGw",
+      "alias": "blu-jam-café-los-angeles-2",
+      "name": "Blu Jam Café",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/XE1J0GjYpoTEKbjv0ayhWA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/blu-jam-caf%C3%A9-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 4334,
+      "categories": [
+        {
+          "alias": "newamerican",
+          "title": "American (New)"
+        },
+        {
+          "alias": "breakfast_brunch",
+          "title": "Breakfast & Brunch"
+        },
+        {
+          "alias": "cafes",
+          "title": "Cafes"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.0837144354804,
+        "longitude": -118.350571407739
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "7371 Melrose Ave",
+        "address2": null,
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90046",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["7371 Melrose Ave", "Los Angeles, CA 90046"]
+      },
+      "phone": "+13239519191",
+      "display_phone": "(323) 951-9191",
+      "distance": 3644.3428792604122
+    },
+    {
+      "id": "TzIJzamxdVGc3zReKbLGaA",
+      "alias": "providence-los-angeles-2",
+      "name": "Providence",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/HtSxmGcVJ3gQwSPg_uYdRw/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/providence-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 2381,
+      "categories": [
+        {
+          "alias": "seafood",
+          "title": "Seafood"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.083628,
+        "longitude": -118.330168
+      },
+      "transactions": [],
+      "price": "$$$$",
+      "location": {
+        "address1": "5955 Melrose Ave",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90038",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["5955 Melrose Ave", "Los Angeles, CA 90038"]
+      },
+      "phone": "+13234604170",
+      "display_phone": "(323) 460-4170",
+      "distance": 2580.761762152348
+    },
+    {
+      "id": "z0zaCVA-p_5xTsyUZrmR0g",
+      "alias": "république-los-angeles-2",
+      "name": "République",
+      "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/TZJzdMsLNAg-ekOjI-6aZA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/r%C3%A9publique-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3989,
+      "categories": [
+        {
+          "alias": "french",
+          "title": "French"
+        },
+        {
+          "alias": "breakfast_brunch",
+          "title": "Breakfast & Brunch"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.06415,
+        "longitude": -118.34367
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "624 S La Brea Ave",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90036",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["624 S La Brea Ave", "Los Angeles, CA 90036"]
+      },
+      "phone": "+13103626115",
+      "display_phone": "(310) 362-6115",
+      "distance": 2074.1001861006484
+    },
+    {
+      "id": "KtEMG1Aln3vQzte92QJxlw",
+      "alias": "genwa-korean-bbq-los-angeles-2",
+      "name": "Genwa Korean BBQ",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/90tPEZZpdjwJ0mdMS_ypjQ/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/genwa-korean-bbq-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 2555,
+      "categories": [
+        {
+          "alias": "korean",
+          "title": "Korean"
+        },
+        {
+          "alias": "bbq",
+          "title": "Barbeque"
+        },
+        {
+          "alias": "soup",
+          "title": "Soup"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.062321315088,
+        "longitude": -118.340898970219
+      },
+      "transactions": ["restaurant_reservation"],
+      "price": "$$",
+      "location": {
+        "address1": "5115 Wilshire Blvd",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90036",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["5115 Wilshire Blvd", "Los Angeles, CA 90036"]
+      },
+      "phone": "+13235490760",
+      "display_phone": "(323) 549-0760",
+      "distance": 1799.8199895326532
+    },
+    {
+      "id": "CbW8U0QAwh5XRkaLt0xNZA",
+      "alias": "masa-of-echo-park-los-angeles",
+      "name": "Masa of Echo Park",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/fPSs3Kgy7Tn4WnSF-zl4OQ/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/masa-of-echo-park-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3635,
+      "categories": [
+        {
+          "alias": "newamerican",
+          "title": "American (New)"
+        },
+        {
+          "alias": "pizza",
+          "title": "Pizza"
+        },
+        {
+          "alias": "salad",
+          "title": "Salad"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.077585,
+        "longitude": -118.259599
+      },
+      "transactions": ["pickup"],
+      "price": "$$",
+      "location": {
+        "address1": "1800 W Sunset Blvd",
+        "address2": null,
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90026",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["1800 W Sunset Blvd", "Los Angeles, CA 90026"]
+      },
+      "phone": "+12139891558",
+      "display_phone": "(213) 989-1558",
+      "distance": 5962.124763619859
+    },
+    {
+      "id": "JYGPEUZy4k5ObXGIjcD3DA",
+      "alias": "hae-jang-chon-korean-bbq-restaurant-los-angeles",
+      "name": "Hae Jang Chon Korean BBQ Restaurant",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/UE_ZY3fBqOaun7z-75Drbw/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/hae-jang-chon-korean-bbq-restaurant-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 4144,
+      "categories": [
+        {
+          "alias": "korean",
+          "title": "Korean"
+        },
+        {
+          "alias": "bbq",
+          "title": "Barbeque"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.0639032,
+        "longitude": -118.3061281
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "3821 W 6th St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90020",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["3821 W 6th St", "Los Angeles, CA 90020"]
+      },
+      "phone": "+12133898777",
+      "display_phone": "(213) 389-8777",
+      "distance": 1428.3680512973276
+    },
+    {
+      "id": "YBmk31pBPukmnRyioe5uBA",
+      "alias": "sushi-gen-los-angeles",
+      "name": "Sushi Gen",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/tBsq9To8OQjF3mz1zLMX6A/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/sushi-gen-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 3435,
+      "categories": [
+        {
+          "alias": "sushi",
+          "title": "Sushi Bars"
+        },
+        {
+          "alias": "japanese",
+          "title": "Japanese"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0470000646326,
+        "longitude": -118.238502456345
+      },
+      "transactions": [],
+      "price": "$$$",
+      "location": {
+        "address1": "422 E 2nd St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90012",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["422 E 2nd St", "Los Angeles, CA 90012"]
+      },
+      "phone": "+12136170552",
+      "display_phone": "(213) 617-0552",
+      "distance": 7805.650821135193
+    },
+    {
+      "id": "fxeuGYnoRWwm5aGDg1FRJA",
+      "alias": "marugame-monzo-los-angeles-2",
+      "name": "Marugame Monzo",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/Q4wgtbzljwmssLWJAuWI_g/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/marugame-monzo-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 2937,
+      "categories": [
+        {
+          "alias": "japanese",
+          "title": "Japanese"
+        },
+        {
+          "alias": "noodles",
+          "title": "Noodles"
+        },
+        {
+          "alias": "asianfusion",
+          "title": "Asian Fusion"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0499467929522,
+        "longitude": -118.24000469601
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "329 E 1st St",
+        "address2": "",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90012",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["329 E 1st St", "Los Angeles, CA 90012"]
+      },
+      "phone": "+12133469762",
+      "display_phone": "(213) 346-9762",
+      "distance": 7607.646611463023
+    },
+    {
+      "id": "b4SH4SbQUJfXxh6hNkF0wg",
+      "alias": "eggslut-los-angeles-7",
+      "name": "Eggslut",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/_wNb9v2kZxaC8miu5Wk0LA/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/eggslut-los-angeles-7?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 5015,
+      "categories": [
+        {
+          "alias": "breakfast_brunch",
+          "title": "Breakfast & Brunch"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.0505289,
+        "longitude": -118.2486189
+      },
+      "transactions": [],
+      "price": "$",
+      "location": {
+        "address1": "317 S Broadway",
+        "address2": "",
+        "address3": "Grand Central Market",
+        "city": "Los Angeles",
+        "zip_code": "90013",
+        "country": "US",
+        "state": "CA",
+        "display_address": [
+          "317 S Broadway",
+          "Grand Central Market",
+          "Los Angeles, CA 90013"
+        ]
+      },
+      "phone": "+12136250292",
+      "display_phone": "(213) 625-0292",
+      "distance": 6796.48850231388
+    },
+    {
+      "id": "4LFbJ8P4jCh70ZNKRig0qw",
+      "alias": "emc-seafood-and-raw-bar-los-angeles",
+      "name": "EMC Seafood & Raw Bar",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/N5XLRVNZLrcJJqfrJCpFfQ/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/emc-seafood-and-raw-bar-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 2963,
+      "categories": [
+        {
+          "alias": "seafood",
+          "title": "Seafood"
+        },
+        {
+          "alias": "raw_food",
+          "title": "Live/Raw Food"
+        },
+        {
+          "alias": "sushi",
+          "title": "Sushi Bars"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.063452,
+        "longitude": -118.299046
+      },
+      "transactions": ["delivery", "pickup"],
+      "price": "$$",
+      "location": {
+        "address1": "3500 W 6th St",
+        "address2": "Ste 101",
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90020",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["3500 W 6th St", "Ste 101", "Los Angeles, CA 90020"]
+      },
+      "phone": "+12133519988",
+      "display_phone": "(213) 351-9988",
+      "distance": 2067.7892612118967
+    },
+    {
+      "id": "MlmcOkwaNnxl3Zuk6HsPCQ",
+      "alias": "slurpin-ramen-bar-los-angeles",
+      "name": "Slurpin' Ramen Bar",
+      "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/p2Md905NX86CuiLa6nIAFg/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/slurpin-ramen-bar-los-angeles?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 2646,
+      "categories": [
+        {
+          "alias": "ramen",
+          "title": "Ramen"
+        },
+        {
+          "alias": "noodles",
+          "title": "Noodles"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 34.0573614429986,
+        "longitude": -118.306769744705
+      },
+      "transactions": ["pickup"],
+      "price": "$$",
+      "location": {
+        "address1": "3500 W 8th St",
+        "address2": null,
+        "address3": "",
+        "city": "Los Angeles",
+        "zip_code": "90005",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["3500 W 8th St", "Los Angeles, CA 90005"]
+      },
+      "phone": "+12133888607",
+      "display_phone": "(213) 388-8607",
+      "distance": 1425.7025690501273
+    },
+    {
+      "id": "0WyRlH-fxOVLh1b3oEBEEQ",
+      "alias": "urth-caffé-downtown-los-angeles-2",
+      "name": "Urth Caffé - Downtown",
+      "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/c_ujYvVnC2PBBwvp6QHbrQ/o.jpg",
+      "is_closed": false,
+      "url":
+        "https://www.yelp.com/biz/urth-caff%C3%A9-downtown-los-angeles-2?adjust_creative=L7-0OCCg6X1f1wil8OPfqw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=L7-0OCCg6X1f1wil8OPfqw",
+      "review_count": 4687,
+      "categories": [
+        {
+          "alias": "coffee",
+          "title": "Coffee & Tea"
+        },
+        {
+          "alias": "desserts",
+          "title": "Desserts"
+        },
+        {
+          "alias": "sandwiches",
+          "title": "Sandwiches"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 34.041974,
+        "longitude": -118.235426
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "451 S Hewitt St",
+        "address2": "",
+        "address3": null,
+        "city": "Los Angeles",
+        "zip_code": "90013",
+        "country": "US",
+        "state": "CA",
+        "display_address": ["451 S Hewitt St", "Los Angeles, CA 90013"]
+      },
+      "phone": "+12137974534",
+      "display_phone": "(213) 797-4534",
+      "distance": 8213.757219253852
+    }
+  ],
+  "total": 10100,
+  "region": {
+    "center": {
+      "longitude": -118.32138061523438,
+      "latitude": 34.0615895441259
+    }
+  }
+}

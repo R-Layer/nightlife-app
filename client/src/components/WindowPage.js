@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { logoutAction } from "../redux/actions/userActions";
 
 import Navbar from "./Navbar";
+import GridCard from "./GridCard";
 
 class WindowPage extends Component {
   render() {
@@ -16,6 +17,8 @@ class WindowPage extends Component {
           isAuthenticated={this.props.authState.isAuthenticated}
           logout={this.props.logout}
         />
+        <div className="placeholder" />
+        <GridCard />
       </div>
     );
   }

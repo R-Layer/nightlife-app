@@ -12,13 +12,38 @@
   border: none;
 }
 
-.CST_titleThrough {
-  margin-top: -4rem;
-  background-color: #fff;
+.CST_is-opposed {
+  justify-content: space-between;
 }
 
 .buttons.CST_is-opposed {
   justify-content: space-between;
+}
+
+.CST_is-monoline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.CST_is-counter {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  margin: auto;
+}
+
+.CST_is-open {
+  color: green;
+}
+
+.CST_is-closed {
+  color: crimson;
+}
+
+.CST_titleThrough {
+  margin-top: -4rem;
+  background-color: #fff;
 }
 
 .CST_clickable {
@@ -28,6 +53,23 @@
 .CST_clickable:hover {
   color: #118fe4;
   background-color: #fff;
+}
+
+.CST_biz-card {
+  width: 300px;
+  margin: 20px;
+}
+
+.CST_detach {
+  margin: 0 1rem;
+}
+
+.CST_spaced {
+  margin: 1rem 0;
+}
+
+.placeholder {
+  height: 200px;
 }
 
 @media (max-width: 767px) {

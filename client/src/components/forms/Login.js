@@ -35,6 +35,7 @@ class Login extends Component {
     let myInit = {
       method: "GET",
       headers: { authorization: apiKey },
+      headers: myHead,
       mode: "cors"
     };
 
@@ -122,7 +123,8 @@ class Login extends Component {
                   Log in
                 </button>
                 <button
-                  onClick={this.onClick}
+                  //onClick={this.onClick}
+                  onClick={this.fetchYelp}
                   type="button"
                   className="button is-info"
                 >
