@@ -25,7 +25,7 @@ export const registerAction = userData => dispatch => {
     .catch(err => dispatch({ type: failProcess.ERRORS, err }));
 };
 
-export const loginAction = userData => dispatch => {
+export const loginAction = (userData, history) => dispatch => {
   const requestOptions = {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -35,7 +35,6 @@ export const loginAction = userData => dispatch => {
   fetch("/api/users/login", requestOptions)
     .then(res => res.json())
     .then(loggedUser => {
-      console.log(loggedUser);
       if (loggedUser.err) {
         return dispatch({
           type: failProcess.ERRORS,
@@ -44,7 +43,8 @@ export const loginAction = userData => dispatch => {
       } else {
         localStorage.setItem("authToken", loggedUser.token);
         dispatch({ type: failProcess.CLEAR });
-        return dispatch({ type: loginProcess.SUCCESS, loggedUser });
+        dispatch({ type: loginProcess.SUCCESS, loggedUser });
+        return history.push("/");
       }
     })
     .catch(err => dispatch({ type: failProcess.ERRORS, err }));

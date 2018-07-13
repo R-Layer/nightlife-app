@@ -4,6 +4,6 @@ import { userReducer } from "./userReducer";
 import { errors } from "./errorReducer";
 
 export const rootReducer = combineReducers({
-  userReducer,
+  authState: userReducer,
   errors
 });

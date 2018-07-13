@@ -24,6 +24,10 @@ class Register extends Component {
     });
   };
 
+  onClick = () => {
+    this.props.history.push("/");
+  };
+
   onSubmit = e => {
     e.preventDefault();
 
@@ -87,7 +91,7 @@ class Register extends Component {
                   <input
                     className={spreadErr.email ? "input is-danger" : "input"}
                     type="email"
-                    placeholder="Email input"
+                    placeholder="coolDog@woof.com"
                     name="email"
                     value={this.state.email}
                     onChange={this.onChange}
@@ -154,7 +158,11 @@ class Register extends Component {
                 <button type="submit" className="button is-success">
                   Sign up
                 </button>
-                <button type="button" className="button is-info">
+                <button
+                  type="button"
+                  className="button is-info"
+                  onClick={this.onClick}
+                >
                   Return home
                 </button>
               </div>

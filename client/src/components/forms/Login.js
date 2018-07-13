@@ -21,11 +21,28 @@ class Login extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    this.props.loginUser(this.state);
+    this.props.loginUser(this.state, this.props.history);
   };
 
   onClick = () => {
-    this.props.logout();
+    this.props.history.push("/");
+  };
+
+  fetchYelp = () => {
+    /*     let apiKey =
+      "Bearer m1NoLc4IaowqFwqs5MjQXEwD66eplE66JSyIC28-yj16_7MFpRh4fPp6DsJekLiZBjz0cIMP3vuCzlSMOsr4Kv5_MVnqvipExw8rO1U6tIuR9yZs8NLblJ1CDJ1HW3Yx";
+
+    let myInit = {
+      method: "GET",
+      headers: { authorization: apiKey },
+      mode: "cors"
+    };
+
+    fetch(
+      "https://api.yelp.com/v3/businesses/search?location=LosAngeles",
+      myInit
+    ).then(res => console.log(res)); */
+    console.log("auth", this.props.authState);
   };
 
   render() {
@@ -102,7 +119,7 @@ class Login extends Component {
 
               <div className="buttons CST_is-opposed">
                 <button type="submit" className="button is-success">
-                  Sign up
+                  Log in
                 </button>
                 <button
                   onClick={this.onClick}
@@ -126,16 +143,18 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  errors: PropTypes.object.isRequired
+  loginUser: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  authState: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   errors: state.errors,
-  user: state.userReducer
+  authState: state.authState
 });
 
 const mapDispatchToProps = dispatch => ({
-  loginUser: userData => dispatch(loginAction(userData)),
+  loginUser: (userData, history) => dispatch(loginAction(userData, history)),
   logout: () => dispatch(logoutAction())
 });
 
