@@ -20,6 +20,13 @@ import WindowPage from "./components/WindowPage";
 import { loginProcess } from "./redux/types";
 import jwt_decode from "jwt-decode";
 
+/* const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+); */
 const store = createStore(rootReducer, applyMiddleware(thunk));
 if (localStorage.authToken) {
   store.dispatch({

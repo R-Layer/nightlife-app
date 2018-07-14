@@ -1,12 +1,50 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
+import { joinAction, cancelAction } from "./../redux/actions/businessActions";
+
 import response from "./forms/response.json";
 
-class GridCard extends Component {
+/* 
+id 
+name
+isClosed
+image_url
+location.display_address[0] 
+location.city
+location.state
+display_phone
+url
+
+---
+visitors array
+
+*/
+
+class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isJoined: false
+    };
+  }
+
+  toggleReserve = e => {
+    this.state.isJoined
+      ? this.props.cancel(e.target.id)
+      : this.props.join(e.target.id);
+    this.setState({
+      isJoined: !this.state.isJoined
+    });
+  };
+
   render() {
-    console.log(response.businesses.length);
-    const bizz = response.businesses.map(biz => (
-      <div className="column is-4" key={biz.id}>
+    const { biz } = this.props;
+    const { isJoined } = this.state;
+    return (
+      <div className="column is-4">
         <div className="card CST_biz-card">
           <div className="card-header">
             <div className="CST_is-opposed card-header-title">
@@ -61,16 +99,59 @@ class GridCard extends Component {
               </span>
               {biz.review_count}
             </span>
-            <button className="card-footer-item button is-success">
-              Join!
-            </button>
+            <a
+              className={`card-footer-item button ${
+                isJoined ? "is-danger" : "is-success"
+              }`}
+              id={biz.id}
+              onClick={this.toggleReserve}
+            >
+              {isJoined ? "Cancel" : "Join!"}
+            </a>
           </div>
         </div>
       </div>
+    );
+  }
+}
+class GridCard extends Component {
+  join = id => {
+    this.props.join(id);
+  };
+
+  cancel = id => {
+    this.props.cancel(id);
+  };
+
+  render() {
+    const bizz = response.businesses.map(biz => (
+      <Card biz={biz} join={this.join} cancel={this.cancel} key={biz.id} />
     ));
 
     return <div className="columns is-multiline">{bizz}</div>;
   }
 }
 
-export default GridCard;
+GridCard.propTypes = {
+  authState: PropTypes.object.isRequired
+};
+
+Card.propTypes = {
+  biz: PropTypes.object.isRequired,
+  join: PropTypes.func.isRequired,
+  cancel: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  authState: state.authState
+});
+
+const mapDispatchToProps = dispatch => ({
+  join: id => dispatch(joinAction(id)),
+  cancel: id => dispatch(cancelAction(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GridCard);

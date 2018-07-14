@@ -18,3 +18,13 @@ export const failProcess = {
   ERRORS: "ERRORS",
   CLEAR: "CLEAR"
 };
+
+export const joinProcess = {
+  REQUEST: "JOIN_REQUEST",
+  SUCCESS: "JOIN_SUCCESS"
+};
+
+export const cancelProcess = {
+  REQUEST: "CANCEL_REQUEST",
+  SUCCESS: "CANCEL_SUCCESS"
+};
