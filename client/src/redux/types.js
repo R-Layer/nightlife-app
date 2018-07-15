@@ -19,12 +19,12 @@ export const failProcess = {
   CLEAR: "CLEAR"
 };
 
-export const joinProcess = {
-  REQUEST: "JOIN_REQUEST",
-  SUCCESS: "JOIN_SUCCESS"
+export const reservationProcess = {
+  REQUEST: "RESERVATION_REQUEST",
+  SUCCESS: "RESERVATION_SUCCESS"
 };
 
-export const cancelProcess = {
-  REQUEST: "CANCEL_REQUEST",
-  SUCCESS: "CANCEL_SUCCESS"
+export const getVisitorsProcess = {
+  REQUEST: "GET_VISITORS_REQUEST",
+  SUCCESS: "GET_VISITORS_SUCCESS"
 };

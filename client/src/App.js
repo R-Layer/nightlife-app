@@ -17,7 +17,7 @@ import Register from "./components/forms/Register";
 import LandingPrivate from "./components/LandingPrivate";
 import WindowPage from "./components/WindowPage";
 
-import { loginProcess } from "./redux/types";
+import { loginProcess, reservationProcess } from "./redux/types";
 import jwt_decode from "jwt-decode";
 
 /* const store = createStore(
@@ -37,6 +37,13 @@ if (localStorage.authToken) {
   if (exp > Date.now()) {
     store.dispatch({ type: loginProcess.LOGOUT });
   }
+}
+
+if (localStorage.reserveStatus) {
+  store.dispatch({
+    type: reservationProcess.SUCCESS,
+    result: localStorage.reserveStatus
+  });
 }
 class App extends Component {
   render() {

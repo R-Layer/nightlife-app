@@ -72,6 +72,16 @@
   height: 200px;
 }
 
+.CST_hover-list {
+  position: absolute;
+  background-color: #333;
+  margin-left: 20px;
+  color: #fff;
+  padding: 0.5rem;
+  width: 300px;
+  z-index: 100;
+}
+
 @media (max-width: 767px) {
   .CST_frame {
     border-bottom: 0;

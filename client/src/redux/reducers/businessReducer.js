@@ -1,13 +1,18 @@
-import { joinProcess, cancelProcess } from "./../types";
+import { reservationProcess, getVisitorsProcess } from "./../types";
 
-export const businessReducer = (state = {}, action) => {
+export const businessReducer = (state = [], action) => {
   switch (action.type) {
-    case joinProcess.SUCCESS:
-      console.log("Joined!");
+    case getVisitorsProcess.SUCCESS:
+      return [...action.result];
+    default:
       return state;
-    case cancelProcess.SUCCESS:
-      console.log("Canceled");
-      return state;
+  }
+};
+
+export const reservationReducer = (state = {}, action) => {
+  switch (action.type) {
+    case reservationProcess.SUCCESS:
+      return action.result;
     default:
       return state;
   }
