@@ -39,17 +39,10 @@ export const getBusinessesAction = location => dispatch => {
   const requestOptions = {
     method: "GET",
     headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.YELP_KEY}`
-    },
-    mode: "cors"
+      "Content-Type": "application/json"
+    }
   };
-  console.log("env", process.env);
-  console.log("key", process.env.YELP_KEY);
-  fetch(
-    `https://api.yelp.com/v3/businesses/search?location=${location}`,
-    requestOptions
-  )
+  fetch(`api/biz/yelp/${location}`, requestOptions)
     .then(res => res.json())
     .then(result => dispatch({ type: getBusinessesProcess.SUCCESS, result }))
     .catch(err => dispatch({ type: failProcess.ERRORS, err }));

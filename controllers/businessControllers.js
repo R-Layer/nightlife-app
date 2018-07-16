@@ -41,3 +41,22 @@ exports.businesses_reservation = (req, res) => {
     }
   });
 };
+
+exports.yelp_fetching = (req, res) => {
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.YELP_KEY}`
+    },
+    mode: "cors"
+  };
+  console.log("env", process.env);
+  console.log("key", process.env.YELP_KEY);
+  fetch(
+    `https://api.yelp.com/v3/businesses/search?location=${req.params.location}`,
+    requestOptions
+  )
+    .then(result => res.status(200).json(result))
+    .catch(err => res.status(500).json(err));
+};
