@@ -51,6 +51,11 @@
 }
 
 .CST_clickable:hover {
+  background-color: #2e63dd;
+  color: #fff;
+}
+
+.is-active .CST_clickable:hover {
   color: #118fe4;
   background-color: #fff;
 }
@@ -80,6 +85,27 @@
   padding: 0.5rem;
   width: 300px;
   z-index: 100;
+}
+
+.CST_hero-bar {
+  height: 40vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.CST_search-bar {
+  width: 80vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px groove black;
+  font: 1.5rem "Courier new", Monospace;
+}
+
+.CST_search-bar:focus {
+  box-shadow: -2px -2px 5px #ccc, 2px 0px 5px #ccc;
 }
 
 @media (max-width: 767px) {

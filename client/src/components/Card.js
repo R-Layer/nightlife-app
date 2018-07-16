@@ -14,10 +14,10 @@ class Card extends Component {
   }
 
   componentDidUpdate() {
-    const { businesses, biz } = this.props;
+    const { visitors, biz } = this.props;
     const { ownVisitors } = this.state;
-    for (let business in businesses) {
-      let lastBiz = businesses[business];
+    for (let business in visitors) {
+      let lastBiz = visitors[business];
       if (
         lastBiz.yelpId === biz.id &&
         lastBiz.visitors.length !== ownVisitors.length
@@ -45,14 +45,9 @@ class Card extends Component {
     }
   };
 
-  getVisitors = () => {
-    this.props.visitors();
-  };
-
   render() {
     const { biz, user } = this.props;
     const { isJoined, isShown, ownVisitors } = this.state;
-    console.log("ownvis", ownVisitors);
     return (
       <div className="column is-4">
         <div className="card CST_biz-card">
@@ -141,7 +136,7 @@ class Card extends Component {
 Card.propTypes = {
   user: PropTypes.object.isRequired,
   biz: PropTypes.object.isRequired,
-  businesses: PropTypes.array.isRequired
+  visitors: PropTypes.array.isRequired
 };
 
 export default Card;

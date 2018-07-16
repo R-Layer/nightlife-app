@@ -1,12 +1,17 @@
 import { combineReducers } from "redux";
 
-import { businessReducer, reservationReducer } from "./businessReducer";
+import {
+  businessesReducer,
+  reservationReducer,
+  visitorsReducer
+} from "./businessReducer";
 import { userReducer } from "./userReducer";
 import { errors } from "./errorReducer";
 
 export const rootReducer = combineReducers({
   authState: userReducer,
   errors,
-  businesses: businessReducer,
+  visitors: visitorsReducer,
+  businesses: businessesReducer,
   reservations: reservationReducer
 });

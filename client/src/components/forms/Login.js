@@ -28,24 +28,6 @@ class Login extends Component {
     this.props.history.push("/");
   };
 
-  fetchYelp = () => {
-    /*     let apiKey =
-      "Bearer m1NoLc4IaowqFwqs5MjQXEwD66eplE66JSyIC28-yj16_7MFpRh4fPp6DsJekLiZBjz0cIMP3vuCzlSMOsr4Kv5_MVnqvipExw8rO1U6tIuR9yZs8NLblJ1CDJ1HW3Yx";
-
-    let myInit = {
-      method: "GET",
-      headers: { authorization: apiKey },
-      headers: myHead,
-      mode: "cors"
-    };
-
-    fetch(
-      "https://api.yelp.com/v3/businesses/search?location=LosAngeles",
-      myInit
-    ).then(res => console.log(res)); */
-    console.log("auth", this.props.authState);
-  };
-
   render() {
     const { errors } = this.props;
     let spreadErr = {};
@@ -123,8 +105,7 @@ class Login extends Component {
                   Log in
                 </button>
                 <button
-                  //onClick={this.onClick}
-                  onClick={this.fetchYelp}
+                  onClick={this.onClick}
                   type="button"
                   className="button is-info"
                 >

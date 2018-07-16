@@ -28,3 +28,8 @@ export const getVisitorsProcess = {
   REQUEST: "GET_VISITORS_REQUEST",
   SUCCESS: "GET_VISITORS_SUCCESS"
 };
+
+export const getBusinessesProcess = {
+  REQUEST: "GET_BUSINESSES_REQUEST",
+  SUCCESS: "GET_BUSINESSES_SUCCESS"
+};

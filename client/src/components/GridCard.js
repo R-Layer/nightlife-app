@@ -15,21 +15,24 @@ import response from "./forms/response.json";
 class GridCard extends Component {
   reservation = id => {
     this.props.reservation(id).then(() => {
-      this.props.visitors();
+      this.props.getVisitors();
     });
   };
 
   componentDidMount = () => {
-    this.props.visitors();
+    this.props.getVisitors();
   };
 
   render() {
-    const bizz = response.businesses.map(biz => {
+    const { businesses, authState, visitors } = this.props;
+    console.log(businesses);
+    let arrToMap = response.businesses;
+    const bizz = arrToMap.map(biz => {
       return (
         <Card
-          user={this.props.authState}
+          user={authState}
           biz={biz}
-          businesses={this.props.businesses}
+          visitors={visitors}
           reservation={this.reservation}
           key={biz.id}
         />
@@ -42,18 +45,20 @@ class GridCard extends Component {
 
 GridCard.propTypes = {
   authState: PropTypes.object.isRequired,
-  businesses: PropTypes.array.isRequired
+  visitors: PropTypes.array.isRequired,
+  businesses: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   authState: state.authState,
+  visitors: state.visitors,
   businesses: state.businesses,
   reservations: state.reservations
 });
 
 const mapDispatchToProps = dispatch => ({
   reservation: id => dispatch(reservationAction(id)),
-  visitors: () => dispatch(getVisitorsAction())
+  getVisitors: () => dispatch(getVisitorsAction())
 });
 
 export default connect(
