@@ -44,7 +44,7 @@ export const getBusinessesAction = location => dispatch => {
     },
     mode: "cors"
   };
-
+  console.log("key", process.env.YELP_KEY);
   fetch(
     `https://api.yelp.com/v3/businesses/search?location=${location}`,
     requestOptions
