@@ -39,8 +39,8 @@ export const getBusinessesAction = location => dispatch => {
   const requestOptions = {
     method: "GET",
     headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${process.env.YELP_KEY}`
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.YELP_KEY}`
     },
     mode: "cors"
   };
