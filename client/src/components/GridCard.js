@@ -10,8 +10,6 @@ import {
   getVisitorsAction
 } from "./../redux/actions/businessActions";
 
-import response from "./forms/response.json";
-
 class GridCard extends Component {
   reservation = id => {
     this.props.reservation(id).then(() => {
@@ -25,9 +23,7 @@ class GridCard extends Component {
 
   render() {
     const { businesses, authState, visitors } = this.props;
-    console.log(businesses);
-    let arrToMap = response.businesses;
-    const bizz = arrToMap.map(biz => {
+    const bizz = businesses.map(biz => {
       return (
         <Card
           user={authState}
@@ -46,7 +42,7 @@ class GridCard extends Component {
 GridCard.propTypes = {
   authState: PropTypes.object.isRequired,
   visitors: PropTypes.array.isRequired,
-  businesses: PropTypes.object.isRequired
+  businesses: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({

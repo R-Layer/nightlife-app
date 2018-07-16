@@ -13,6 +13,7 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
+      location: "",
       password: "",
       password2: ""
     };
@@ -102,6 +103,28 @@ class Register extends Component {
                 </div>
                 {spreadErr.email &&
                   spreadErr.email.map(err => (
+                    <p className="help is-danger" key={err}>
+                      {err}
+                    </p>
+                  ))}
+              </div>
+              <div className="field">
+                <label className="label">Default location</label>
+                <div className="control has-icons-left">
+                  <input
+                    className={spreadErr.location ? "input is-danger" : "input"}
+                    type="text"
+                    placeholder="34 rue Montmartre, Paris"
+                    name="location"
+                    value={this.state.location}
+                    onChange={this.onChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-map" />
+                  </span>
+                </div>
+                {spreadErr.location &&
+                  spreadErr.location.map(err => (
                     <p className="help is-danger" key={err}>
                       {err}
                     </p>

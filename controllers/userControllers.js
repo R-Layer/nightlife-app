@@ -71,6 +71,7 @@ exports.users_create_one = (req, res) => {
           .then(hashed => {
             const newUser = new User({
               name: req.body.name,
+              defaultLocation: req.body.location,
               email: req.body.email,
               passwordHash: hashed
             });
@@ -80,7 +81,8 @@ exports.users_create_one = (req, res) => {
                 res.status(201).json({
                   message: "User successfully created",
                   newUser: {
-                    username: userCreated.username,
+                    name: userCreated.name,
+                    defaultLocation: userCreated.defaultLocation,
                     email: userCreated.email
                   }
                 })
@@ -114,7 +116,7 @@ exports.users_create_one = (req, res) => {
 
 exports.users_delete_self = (req, res) => {
   User.findByIdAndDelete(req.app.locals.userAuth.id)
-    .select("username email")
+    .select("name email defaultLocation")
     .exec()
     .then(removedItem => {
       if (removedItem) {
@@ -182,7 +184,7 @@ exports.users_update_self = (req, res) => {
     { $set: req.body },
     { new: true, runValidators: true }
   )
-    .select("username email")
+    .select("name email defaultLocation")
     .exec()
     .then(userUpdated => {
       if (userUpdated) {

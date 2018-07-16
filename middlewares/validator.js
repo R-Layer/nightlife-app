@@ -16,6 +16,10 @@ const signupValidator = joi.object().keys({
     .string()
     .email()
     .required(),
+  location: joi
+    .string()
+    .required()
+    .min(2),
   password: joi.string().required(),
   // CREDITS TO GERGO ERDOSI [STACK OVERFLOW]
   password2: joi

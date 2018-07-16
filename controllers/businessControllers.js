@@ -1,3 +1,5 @@
+const https = require("https");
+const configvars = require("../config/keys");
 const Business = require("../models/businessModel");
 
 exports.businesses_get_visitors = (req, res) => {
@@ -43,20 +45,21 @@ exports.businesses_reservation = (req, res) => {
 };
 
 exports.yelp_fetching = (req, res) => {
-  const requestOptions = {
+  const opts = {
+    host: "api.yelp.com",
+    port: 443,
+    path: `/v3/businesses/search?location=${encodeURIComponent(
+      req.params.location
+    )}`,
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.YELP_KEY}`
-    },
-    mode: "cors"
+    headers: { authorization: `Bearer ${configvars.YELP_KEY}` }
   };
-  console.log("env", process.env);
-  console.log("key", process.env.YELP_KEY);
-  fetch(
-    `https://api.yelp.com/v3/businesses/search?location=${req.params.location}`,
-    requestOptions
-  )
-    .then(result => res.status(200).json(result))
-    .catch(err => res.status(500).json(err));
+
+  let reqs = https.request(opts, incData => {
+    let response = "";
+    incData.on("data", d => (response += d));
+    incData.on("end", resp => res.status(200).json(JSON.parse(response)));
+  });
+
+  reqs.end();
 };

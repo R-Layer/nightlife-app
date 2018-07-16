@@ -22,10 +22,10 @@ export const reservationReducer = (state = {}, action) => {
   }
 };
 
-export const businessesReducer = (state = {}, action) => {
+export const businessesReducer = (state = [], action) => {
   switch (action.type) {
     case getBusinessesProcess.SUCCESS:
-      return action.result;
+      return action.result.businesses;
     default:
       return state;
   }
