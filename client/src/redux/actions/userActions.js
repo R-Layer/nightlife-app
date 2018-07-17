@@ -2,7 +2,8 @@ import {
   registerProcess,
   loginProcess,
   deleteProcess,
-  failProcess
+  failProcess,
+  updateProcess
 } from "../types";
 
 export const registerAction = userData => dispatch => {
@@ -75,6 +76,31 @@ export const deleteAction = () => dispatch => {
       } else {
         dispatch({ type: failProcess.CLEAR });
         return dispatch({ type: deleteProcess.SUCCESS, deletedUser });
+      }
+    })
+    .catch(err => dispatch({ type: failProcess.ERRORS, err }));
+};
+
+export const updateAction = userData => dispatch => {
+  const requestOptions = {
+    method: "PATCH",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(userData)
+  };
+
+  if (localStorage.authToken) {
+    requestOptions.headers.authorization = localStorage.authToken;
+  }
+
+  fetch("/api/users/update", requestOptions)
+    .then(res => res.json())
+    .then(updatedUser => {
+      if (updatedUser.err) {
+        return dispatch({ type: failProcess.ERRORS, err: updatedUser.err });
+      } else {
+        dispatch({ type: failProcess.CLEAR });
+        console.log("updatedUser", updatedUser);
+        return dispatch({ type: updateProcess.SUCCESS, updatedUser });
       }
     })
     .catch(err => dispatch({ type: failProcess.ERRORS, err }));

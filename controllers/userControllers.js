@@ -261,9 +261,10 @@ exports.users_authentication = (req, res) => {
             if (result) {
               const token = jwt.sign(
                 {
-                  username: user.name,
+                  name: user.name,
                   id: user._id,
-                  location: user.defaultLocation
+                  location: user.defaultLocation,
+                  email: user.email
                 },
                 configVars.JWT_SECRET,
                 { expiresIn: "1h" }

@@ -18,7 +18,7 @@ router.get("/", users_get_all);
 router.get("/:id", users_get_one);
 router.post("/signup", validMW, users_create_one);
 router.post("/login", validMW, users_authentication);
-router.put("/update", validMW, authMW, users_update_self);
+router.patch("/update", validMW, authMW, users_update_self);
 router.delete("/delete", authMW, users_delete_self);
 
 module.exports = router;

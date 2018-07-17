@@ -20,7 +20,10 @@ const signupValidator = joi.object().keys({
     .string()
     .required()
     .min(2),
-  password: joi.string().required(),
+  password: joi
+    .string()
+    .min(3)
+    .required(),
   // CREDITS TO GERGO ERDOSI [STACK OVERFLOW]
   password2: joi
     .any()
@@ -35,15 +38,42 @@ const signupValidator = joi.object().keys({
     })
 });
 
+const updateValidator = joi.object().keys({
+  name: joi
+    .string()
+    .min(3)
+    .required(),
+  email: joi
+    .string()
+    .email()
+    .required(),
+  location: joi
+    .string()
+    .min(2)
+    .required(),
+  oldPassword: joi.string().allow(""),
+  newPassword: joi
+    .string()
+    .min(3)
+    .allow(""),
+  password2: joi
+    .string()
+    .valid(joi.ref("newPassword"))
+    .options({ language: { any: { allowOnly: "must match new password" } } })
+});
+
 const validator = (req, res, next) => {
   let dataToValidate;
-  let reqUrl = /update/.test(req.url) ? "/signup" : req.url;
-  switch (reqUrl) {
+  //let reqUrl = /update/.test(req.url) ? "/signup" : req.url;
+  switch (req.url) {
     case "/login":
       dataToValidate = loginValidator;
       break;
     case "/signup":
       dataToValidate = signupValidator;
+      break;
+    case "/update":
+      dataToValidate = updateValidator;
       break;
     default:
       dataToValidate = null;

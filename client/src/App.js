@@ -4,18 +4,20 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./css/App.css";
 import "./css/customBulma.css";
 
 import { rootReducer } from "./redux/reducers/rootReducer";
 
-import PrivateRoute from "./components/PrivateRoute";
+//import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/forms/Login";
 import Register from "./components/forms/Register";
-import LandingPrivate from "./components/LandingPrivate";
 import WindowPage from "./components/WindowPage";
+//import EditUser from "./components/forms/EditUser";
 
 import { loginProcess, reservationProcess } from "./redux/types";
 import jwt_decode from "jwt-decode";
@@ -54,13 +56,9 @@ class App extends Component {
             <Route exact path={"/"} component={WindowPage} />
             <Route exact path={"/login"} component={Login} />
             <Route exact path={"/register"} component={Register} />
-            <Switch>
-              <PrivateRoute
-                exact
-                path={"/private"}
-                component={LandingPrivate}
-              />
-            </Switch>
+            {/*             <Switch>
+              <PrivateRoute exact path={"/settings"} component={EditUser} />
+            </Switch> */}
           </div>
         </Provider>
       </Router>

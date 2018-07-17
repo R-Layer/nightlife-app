@@ -14,6 +14,11 @@ export const loginProcess = {
   LOGOUT: "LOGOUT"
 };
 
+export const updateProcess = {
+  REQUEST: "UPDATE_REQUEST",
+  SUCCESS: "UPDATE_SUCCESS"
+};
+
 export const failProcess = {
   ERRORS: "ERRORS",
   CLEAR: "CLEAR"
